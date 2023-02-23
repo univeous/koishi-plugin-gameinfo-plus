@@ -8,11 +8,11 @@ function dateToYMD(date) {
     return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d)
 }
 
-function processPriceTable(priceData){
+function processPriceTable(priceData) {
 
     for (const price of priceData) {
-        if(price.platform_id == 0) continue
-        
+        if (price.platform_id == 0) continue
+
         const tr = document.createElement('tr')
         let iconPath = "./assets/"
 
@@ -28,13 +28,13 @@ function processPriceTable(priceData){
                 iconPath = iconPath + "xbox.svg"
                 break
             case 1:
-               iconPath = iconPath + "ps4.svg"
+                iconPath = iconPath + "ps4.svg"
                 break
             case 8:
                 iconPath = iconPath + "ps5.svg"
                 break
             case 7:
-                iconPath =  iconPath + "ns.svg"
+                iconPath = iconPath + "ns.svg"
                 break
             default:
                 break
@@ -53,9 +53,9 @@ function processPriceTable(priceData){
         tr.appendChild(historyPrice)
 
         const currentPrice = document.createElement('th')
-        if(price.price === price.origin_price)
+        if (price.price === price.origin_price)
             currentPrice.innerHTML = price.price
-        else{
+        else {
             currentPrice.innerHTML = `<s>${price.origin_price}</s> <div class="off">${price.price}</div> `
         }
         tr.appendChild(currentPrice)
@@ -64,7 +64,7 @@ function processPriceTable(priceData){
     }
 }
 
-function repos(){
+function repos() {
     const headerImage = document.querySelector(".header")
     const title = document.querySelector("#game-title")
     title.style.top = `${headerImage.clientHeight - title.clientHeight - 40}px`
@@ -73,8 +73,10 @@ function repos(){
 function action(raw_data) {
     const data = raw_data.combine_game
 
-    const headerImage = document.querySelector(".header")
-    headerImage.setAttribute('src', data.img)
+    if (data.img) {
+        const headerImage = document.querySelector(".header")
+        headerImage.setAttribute('src', data.img)
+    }
 
     const title = document.querySelector("#game-title")
     title.innerHTML = data.name
@@ -95,10 +97,9 @@ function action(raw_data) {
     }
 
     const tagsGroup = document.querySelector(".tags-group")
-    if(data.tag){
+    if (data.tag) {
         const tags = data.tag.split(',')
-        for(const tag of tags)
-        {
+        for (const tag of tags) {
             const tagElement = document.createElement('div')
             tagElement.setAttribute('class', 'tag')
             tagElement.innerHTML = tag
