@@ -1,0 +1,71 @@
+div{
+    color: #F9F9F9;
+    font-size: 32px;
+}
+
+th{
+    color: #F9F9F9;
+    font-size: 32px;
+}
+
+h1{
+    font-size: 60px;
+    color: #F9F9F9;
+    position:absolute;
+    top: 110px;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 560px;
+    text-shadow: 1px 1px 3px #909090;
+    word-wrap: break-word;
+    line-height: 120%;
+}
+
+.desc{
+    margin-top: 20px; position: relative; margin-left: 20px;
+    margin-right: 20px;
+    color: #909090;
+    font-size: 24px;
+    line-height: 150%;
+}
+
+.price-table{
+    align-self: center; width: 100%;
+    position: relative;
+}
+
+.off{
+    display: inline-block;
+    color: aquamarine;
+}
+
+.tag{
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    background-color: rgb(63, 92, 80);
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 20px;
+}
+
+.tags-group{
+    position: relative;
+    padding: 20px;
+    gap: 20px;
+}
+
+.release-date{
+    position: relative;
+    margin-left: -20px;
+    align-content: center;
+    width: 100%;
+    text-align: end;
+}
+
+.release-date-text{
+    font-size: 16px;
+    display: inline-block;
+}

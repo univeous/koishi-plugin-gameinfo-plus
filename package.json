@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-gameinfo-plus",
-  "description": "",
-  "version": "0.0.1",
+  "description": "查询游戏多平台价格信息并以图片形式返回",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,13 +9,30 @@
     "dist"
   ],
   "license": "MIT",
+  "contributors": ["Univeous <univeous@gmail.com>"],
   "scripts": {},
   "keywords": [
     "chatbot",
     "koishi",
     "plugin"
   ],
+  "homepage": "https://github.com/univeous/koishi-plugin-gameinfo-plus",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/univeous/koishi-plugin-gameinfo-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/univeous/koishi-plugin-gameinfo-plus/issues"
+  },
   "peerDependencies": {
     "koishi": "^4.11.6"
+  },
+  "dependencies": {
+    "koishi-plugin-puppeteer": "^3.4.9"
+  },
+  "koishi": {
+    "service": {
+      "required": ["puppeteer"]
+    }
   }
 }
